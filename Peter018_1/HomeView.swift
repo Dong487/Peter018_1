@@ -68,7 +68,7 @@ class HomveViewModel: ObservableObject{
 struct HomeView: View {
     
     @StateObject private var viewModel = HomveViewModel()
-    @State var location: CGPoint = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+    @State var location: CGPoint = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 3.5)
     
 //    @State var rect: CGRect = CGRect(x: 0, y: 0, width: 10, height: 10)
 
@@ -122,6 +122,7 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView{
     
+    @ViewBuilder
     private func MainView(image: [String] ,textContent: String ,fontSize: CGFloat ,fontColor: Color) -> some View{
         ZStack{
             Color.white
@@ -228,6 +229,8 @@ extension HomeView{
                     Image(systemName: "chevron.backward.square.fill")
                         
                 }
+                
+//                Text("\(viewModel.imageArray[])")
                 
                 Spacer()
                 
